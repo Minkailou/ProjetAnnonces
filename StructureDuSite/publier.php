@@ -15,8 +15,11 @@
     }
 
     $depart = ($pageCourante - 1) * $annoncesParPage;
+
 ?>
-    <div class="heading text-center font-bold text-2xl m-5 text-gray-100">Full Responsive Video Cards</div>
+  
+  
+    <div class="heading text-center font-bold text-2xl m-5 text-gray-100"></div>
     <div class=" mx-auto w-10/12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 
 

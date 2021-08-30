@@ -169,8 +169,13 @@ justify-content: center;
 	justify-content: center;
 }
 .modif{
-	margin-left: 350px;
+	margin-left: 50px;
 	margin-bottom: 20px;
+	background-color: #333;
+	color: white;
+	border-radius: 5px;
+	padding: 4px;
+	
 }
 .modif:hover{
 	background-color: palevioletred;
@@ -178,6 +183,10 @@ justify-content: center;
  }
 .supp{
 	margin-left: 50px;
+	background-color: #333;
+	color: white;
+	border-radius: 5px;
+	padding: 4px;
 }
 
 .supp:hover{

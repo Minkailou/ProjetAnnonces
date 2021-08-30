@@ -15,9 +15,12 @@
           $prix = $idcom->quote($_POST['prix']);
           $datepub = $idcom->quote($_POST['datepub']);
           $lieu = $idcom->quote($_POST['lieu']);
+          $id_users = $idcom->quote($_POST['id_users']);
+          
+          
 
           $requete = "INSERT INTO annonces
-                     VALUES (DEFAULT, $titre, $img_place, $descrip_tion, $categorie, $prix, $datepub, $lieu)";
+                     VALUES (DEFAULT, $titre, $img_place, $descrip_tion, $categorie, $prix, $datepub, $lieu, $id_users)";
           $idcom->exec($requete);  
           
           header('location:index.php');
@@ -27,57 +30,64 @@
   
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
-</head>
-<body>
-<div class="container">
-  <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?> ">
-    <ul class="flex-outer">
-      <li>
-        <label>Titre</label>
-        <input type="text" name="titre" placeholder="Entrez votre nom">
-      </li>
-      <li>
-        <label>Images</label>
-        <input type="file" name="img_place" accept="image/gif, image/jpeg>, image/png">
-      </li>
-      <li>
-        <label>Description</label>
-        <textarea name="descrip_tion"></textarea>
-      </li>
-      <li>
-        <label>Catégorie</label>
-        <input type="text" name="categorie">
-      </li>
-      <li>
-        <label>Prix</label>
-        <input type="text" name="prix">
-      </li>
-      <li>
-        <label>Date</label>
-        <input type="date" name="datepub">
-      </li>
-      <li>
-        <label>Lieu</label>
-        <input type="text" name="lieu">
-      </li>
-      <li>
-        <button class="bouton" type="reset">Supprimer</button>
-        <button class="bouton" type="submit" name="envoyer">envoyer</button>
-      </li>
-    </ul>
-  </form>     
-</div>
-</body>
-</html>
 
-<?php
-  include('footer.php')
-?>
+<div class=" p-6 flex content-center justify-center  items-center">
+<form class="monform" action="#" method="post" enctype="application/x-www-form-urlencoded">
+            
+        <div class=" bg-white shadow-lg max-w-7xl md:flex justify-center items-center">
+            <img class=" flex-1 w-full h-50 object-cover"src="img/tech1.jpg" alt="">
+        <div class="P-4 flex-1 md:flex md:flex-col">
+            <h1 class="text-center text-4xl font-mono m-3">Ajouter annonces</h1>
+         <div class="m-4">
+             <label for="titre" class="block text-gray-600 mb-2">Titre</label>
+             <input type="text"  placeholder=" Votre titre " name="titre" class=" border shadow-inner py-1 px-1 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 ">
+            
+        </div> 
+        <div class="m-4">
+             <label for="images" class="block text-gray-600 mb-2">Images</label>
+             <input type="file"  placeholder=" Votre images " name="img_place"  accept="image/gif, image/jpeg>, image/png"class=" border shadow-inner py-2 px-3 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 ">
+            
+        </div> 
+        <div class="m-4">
+             <label for="description" class="block text-gray-600 mb-2">Description</label>
+             <textarea  placeholder=" Mettez la description " name="descrip_tion" class=" border shadow-inner py-1 px-1 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 "></textarea>
+            
+        </div> 
+        <div class="m-4">
+             <label for="categorie" class="block text-gray-600 mb-2">Catégorie</label>
+             <input type="text"  placeholder=" Catégorie " name="categorie" class=" border shadow-inner py-1 px-1 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 ">
+            
+        </div> 
+        <div class="m-4">
+             <label for="prix" class="block text-gray-600 mb-2">Prix</label>
+             <input type="text"  placeholder=" Prix " name="prix" class=" border shadow-inner py-1 px-3 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 ">
+            
+        </div> 
+        <div class="m-4">
+             <label for="lieu" class="block text-gray-600 mb-2">Lieu </label>
+             <input type="text"  placeholder=" lieu " name="lieu" class=" border shadow-inner py-1 px-3 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 ">
+            
+        </div> 
+        <div class="m-4">
+             <label for="date" class="block text-gray-600 mb-2">Date </label>
+             <input type="date"  placeholder=" Date " name="datepub" class=" border shadow-inner py-1 px-3 text-gray-700 w-full
+             focus:ring-1 focus:ring-gray-300 ">
+            
+        </div> 
+        <button type="reset" name="supprimer" class="bg-gray-700 text-white p-2 rounded m-4 md:bg-gray-500 md:hover:bg-gray-300 hover:text-black">Supprimer</button>
+        <button type="submit" name="envoyer" class="bg-gray-700 text-white p-2 rounded m-4 md:bg-gray-500 md:hover:bg-gray-300 hover:text-black">Envoyer</button>
+        </div> 
+          </form>
+      </body>
+     
+      </html>
+
+
+        
+    

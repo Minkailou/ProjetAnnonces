@@ -1,11 +1,11 @@
 <?php
     session_start();
     include("connexion.php");
-    if(isset($_GET) AND $_GET['id'] > 0)
+    if(isset($_SESSION['id']))
     {
-       $getid = intval($_GET['id']);
+      
        $requser = $idcom->prepare('SELECT * FROM users WHERE id = ?');
-       $requser->execute(array($getid));
+       $requser->execute(array($_SESSION['id']));
        $userinfo = $requser->fetch();
 
     ?>

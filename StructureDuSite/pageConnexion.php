@@ -19,7 +19,8 @@ session_start();
              $_SESSION['id'] = $userinfo['id'];
              $_SESSION['pseudo'] = $userinfo['pseudo'];
              $_SESSION['mail'] = $userinfo['mail'];
-             header("location: profil.php?id=".$_SESSION['id']);
+
+             header("location: inserer.php?id=".$_SESSION['id']);
 
          }else{
              $erreur = "Mauvais mail ou mot de passe";
@@ -38,7 +39,7 @@ session_start();
 <form class="monform" action="" method="post" enctype="application/x-www-form-urlencoded">
         
     <div class=" bg-white shadow-lg max-w-7xl md:flex justify-center items-center">
-        <img class=" flex-1 w-full h-50 object-cover"src="img/tech2.jpg" alt="">
+        <img class=" flex-1 w-full h-50 object-cover"src="img/The2.png" alt="">
     <div class="P-4 flex-1 md:flex md:flex-col">
         <h1 class="text-center text-4xl font-mono m-3">Connexion</h1>
      <div class="m-4">
@@ -66,4 +67,6 @@ session_start();
      ?>
     </div> 
         </div>
-</html>
+<?php
+   include('footer.php');
+?>

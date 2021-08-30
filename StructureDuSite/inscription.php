@@ -105,6 +105,7 @@
                   
         </form>
         <?php
+        
              if(isset($erreur)){
                  echo '<font color="red">'.$erreur."</font>";
              }
@@ -112,4 +113,7 @@
         </div> 
             </div>
 
+    <?php
+    include('footer.php');
+    ?>
 
