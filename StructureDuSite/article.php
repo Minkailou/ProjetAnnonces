@@ -1,4 +1,5 @@
 <?php
+session_start();
   include('connexion.php');
   include('header.php');
 
@@ -22,7 +23,10 @@
 
            $recupArticles = $idcom->query('SELECT * FROM annonces ORDER BY  id DESC');
            while($article = $recupArticles->fetch()){
+           
+               
                ?>
+               
                <div class="each mb-10 m-2 shadow-lg border-gray-800 bg-gray-100 relative">
     <img class="w-full" src='./img/<?="$article[img_place]"?>' width='230' height='260' alt='toff'>
     <div class="info-box text-xs flex p-1 font-semibold text-gray-500 bg-gray-300">
@@ -36,6 +40,8 @@
       <span class="description text-sm block py-2 border-gray-400 mb-2"><?="$article[datepub]"?></span>
       <span class="description text-sm block py-2 border-gray-400 mb-2"><?="$article[lieu]"?></span>
       <a href="supprimer.php?id=<?= $article['id']; ?>">
+      <?php
+      ?>
                     <button class="supp">Supprimer</button>
                     </a>
                     <a href="modifier.php?id=<?= $article['id']; ?>">
@@ -44,8 +50,10 @@
     </div>
     </div>
                <?php
+            
            }
        ?>
+       
     </div>
         <?php
             include('footer.php');

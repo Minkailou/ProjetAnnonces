@@ -21,9 +21,9 @@
   </div>
   <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
     <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
-      <a href="article.php" class="flex-no-grow flex-no-shrink relative py-2 px-2 leading-normal text-white no-underline flex items-center hover:bg-gray-dark">Modifier & Supp</a>
+      <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-2 leading-normal text-white no-underline flex items-center hover:bg-gray-dark"></a>
       <a href="pageConnexion.php" class="flex-no-grow flex-no-shrink relative py-2 px-2 leading-normal text-white no-underline flex items-center hover:bg-gray-dark">Me connecter</a>
-      <a href="inserer.php" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-dark">Insertion</a>
+      <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-gray-dark"></a>
     </div>
   </div>
 </nav>
@@ -34,7 +34,7 @@
                 src="./img/The.png">
         </div>
         <div class="p-8  my-auto ">
-            <h1 class="text-orange-100 text-3xl text-center"> Retrouvez et mettez vos annonces </h1>
+            <h1 class="text-gray-dark text-5xl text-center"> Retrouvez , achetez, vendez et postez vos annonces </h1>
             <p class=" text-gray-600 text-xl text-center"> The focus </p>
         </div>
 

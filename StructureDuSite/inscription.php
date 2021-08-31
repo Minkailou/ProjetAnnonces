@@ -27,21 +27,37 @@
                             if($mdp == $mdp2){
                                 $requete = $idcom->prepare("INSERT INTO users(pseudo, mail, motdepasse, date_inscription) VALUES(?, ?, ?, ?)");
                                 $requete->execute(array($pseudo, $mail, $mdp, $date_inscription));
-                                $erreur = "Votre compte a bien été créé !<br /> <a class=\"idcom\" href=\"pageConnexion.php\">Me connecter</a>";
+                                $erreur = " <div class=\"py-3 px-5 mb-4 bg-green-100 text-green-900 text-sm rounded-md border border-green-200\" role=\"alert\">
+                                Votre <strong>compte</strong> a bien étè créer!
+                            </div><br /><a class=\"idcom\" href=\"pageConnexion.php\"><div class=\"py-3 px-5 mb-4 bg-blue-100 text-blue-900 text-sm rounded-md border border-blue-200\" role=\"alert\">
+                             Me <strong>connecter </strong>
+                        </div></a>";
 
                             }else {
-                                $erreur = "Vos mots de passe ne correspondent pas !";
+                                $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+                                Vos <strong>Mots de passe</strong> ne correspondent pas!
+                            </div>
+                   ";
                             }
                         }else{
-                            $erreur = "Adresse mail déjà utilisée !";
+                            $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+                            Adresse <strong>Mail</strong> déjà utilisé!
+                        </div>
+               ";
                         }
                     }
                     else{
-                        $erreur = "Votre adresse mail n'est pas valide !";
+                        $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+                        Votre  <strong>Mail</strong> n'est pas valide!
+                    </div>
+           ";
                     }
                 }
                 else{
-                    $erreur = "Vos adresses mail ne correspondent pas !";
+                    $erreur =    $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+                    Vos <strong>adresses mails</strong> ne correspondent pas!
+                </div>
+       ";
                 }
             }
             else{
@@ -49,7 +65,10 @@
             }
         }
         else{
-            $erreur = "Tous les champs doivent être complétés !";
+            $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+            Tous <strong>les champs</strong> doivent être complétés
+        </div>
+";
         }
 }
 ?>

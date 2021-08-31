@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('header.php');
     include("connexion.php");
     if(isset($_SESSION['id']))
     {
@@ -20,18 +21,26 @@
     <title>Profil utilisateur</title>
 </head>
 <body>
-     <h2>Profil de <?php echo $userinfo['pseudo'];?></h2>
-     <br /><br />
-     Pseudo = <?php echo $userinfo['pseudo'];?>
-    <br />
-    Mail = <?php echo $userinfo['mail'];?>
-    <br /><br :>
+
+<div class=" bg-gray !important flex items-center justify-center">
+  <div class=" w-80 bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 duration-500 transform transition cursor-pointer">
+    <img src="https://images.unsplash.com/photo-1577982787983-e07c6730f2d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80" alt="">
+    <div class="p-5">
+      <h1 class="text-2xl font-bold">Profil de : <?php echo $userinfo['pseudo'];?></h1>
+      <p class="mt-2 text-lg font-semibold text-gray-600">Pseudo : <?php echo $userinfo['pseudo'];?></p>
+      <p class="mt-1 text-gray-500 font-">Mail : <?php echo $userinfo['mail'];?></p>
+    </div>
+  </div>
+</div>
+     
     <?php
        if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id'])
        {
        ?>
-       <a href="#">Editer mon profil</a>
-       <a href="deconnexion.php">Se deconnecter</a>
+       <a href="inserer.php"><button class="py-3 px-6 text-white rounded-lg bg-gray-500 shadow-lg block md:inline-block">Ajouter annonces</button></a>
+       <a href="article.php"><button class="py-3 px-6 text-white rounded-lg bg-gray-500 shadow-lg block md:inline-block">Modifier l'annonces</button></a>
+       <a href="deconnexion.php"><button class="py-3 px-6 text-white rounded-lg bg-gray-500 shadow-lg block md:inline-block">Se deconnecter</button></a>
+      
        <?php
        }
     ?>
@@ -39,4 +48,7 @@
 </html>
 <?php
 }
+?>
+<?php
+  include('footer.php');
 ?>

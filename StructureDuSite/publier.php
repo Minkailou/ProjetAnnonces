@@ -1,5 +1,7 @@
 <?php
+  session_start();
     include("connexion.php");
+    
     
 
     $annoncesParPage = 12;
@@ -25,8 +27,10 @@
 
 
 <?php
-    $requete = $idcom->query('SELECT * FROM annonces ORDER BY id DESC LIMIT '.$depart.', '.$annoncesParPage );
+    $requete = $idcom->query('SELECT * FROM annonces INNER JOIN users ON annonces.id_users = users.id ORDER BY annonces.id DESC LIMIT '.$depart.', '.$annoncesParPage );
     while($user = $requete->fetch()){
+     
+
 
 ?>
 
@@ -46,10 +50,12 @@
     <div class="desc p-4 text-gray-800">
       <a href="https://www.youtube.com/watch?v=dvqT-E74Qlo" target="_new" class="title font-bold block cursor-pointer hover:underline"><?="$user[titre]"?></a>
       <a href="https://www.youtube.com/user/sam14319" target="_new" class="badge bg-indigo-500 text-grey-500 rounded  p-1 px-3 text-xs font-bold cursor-pointer"><?="$user[categorie]"?></a>
-      <span class="description text-sm block py-2 border-gray-400 mb-2"><?="$user[descrip_tion]"?></span>
-      <span class="description text-sm block py-2 border-gray-400 mb-2"><?="$user[prix]"?></span>
-      <span class="description text-sm block py-2 border-gray-400 mb-2"><?="$user[datepub]"?></span>
-      <span class="description text-sm block py-2 border-gray-400 mb-2"><?="$user[lieu]"?></span>
+      <span class="description text-sm block py-2 border-gray-400 mb-2"><b>Description:</b> <?="$user[descrip_tion]"?></span>
+      <span class="description text-sm block py-2 border-gray-400 mb-2"><b>Prix:</b> <?="$user[prix]"?></span>
+      <span class="description text-sm block py-2 border-gray-400 mb-2"><b>Date:</b> <?="$user[datepub]"?></span>
+      <span class="description text-sm block py-2 border-gray-400 mb-2"><b>Lieu:</b> <?="$user[lieu]"?></span>
+      <span class="description text-sm block py-2 border-gray-400 mb-2"><b>Auteur: </b><?="$user[pseudo]"?></span>
+
     </div>
     </div>
   

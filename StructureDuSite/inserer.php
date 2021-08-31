@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("connexion.php");
     include("header.php");
     
@@ -15,13 +16,14 @@
           $prix = $idcom->quote($_POST['prix']);
           $datepub = $idcom->quote($_POST['datepub']);
           $lieu = $idcom->quote($_POST['lieu']);
-          $id_users = $idcom->quote($_POST['id_users']);
+          $id_users = $idcom->quote($_SESSION['id']);
           
           
 
           $requete = "INSERT INTO annonces
                      VALUES (DEFAULT, $titre, $img_place, $descrip_tion, $categorie, $prix, $datepub, $lieu, $id_users)";
-          $idcom->exec($requete);  
+          $idcom->exec($requete); 
+           
           
           header('location:index.php');
 
@@ -85,7 +87,7 @@
         </div> 
           </form>
       </body>
-     
+      
       </html>
 
 

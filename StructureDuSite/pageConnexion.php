@@ -19,16 +19,22 @@ session_start();
              $_SESSION['id'] = $userinfo['id'];
              $_SESSION['pseudo'] = $userinfo['pseudo'];
              $_SESSION['mail'] = $userinfo['mail'];
-
-             header("location: inserer.php?id=".$_SESSION['id']);
+             
+             header("location: profil.php?id=".$_SESSION['id']);
 
          }else{
-             $erreur = "Mauvais mail ou mot de passe";
+             $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+             Mauvais <strong>Mots de passe</strong> reessayez!
+         </div>
+";
          }
 
 
      }else{
-         $erreur = "Veillez remplir tous les champs...";
+        $erreur = "<div class=\"py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200\" role=\"alert\">
+        Veillez remplir <strong>Tous les champs</strong> ...!
+    </div>
+";
      }
   }
 ?>
